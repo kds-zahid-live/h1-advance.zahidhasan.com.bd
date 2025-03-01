@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { useNavigate } from 'react-router-dom';
 import { 
   Table, 
   TableBody, 
@@ -39,10 +40,17 @@ export default function More() {
     },
   });
 
+  
+
+
+  const navigate = useNavigate();
 
   const handleClick = () => {
-    window.location.href = 'https://tools.zahidhasan.com.bd/';
+    navigate('/'); // Navigates to the homepage without reloading
   };
+
+
+  
 
   
 
