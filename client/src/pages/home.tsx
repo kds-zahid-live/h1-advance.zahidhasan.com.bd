@@ -134,10 +134,10 @@ export default function Home() {
         <CardContent className="space-y-6">
           <div className="space-y-2">
             <label className="text-sm font-medium">
-              Enter URLs (one per line)
+              Enter URLs
             </label>
             <Textarea
-              placeholder="https://example.com&#10;https://another-example.com"
+              placeholder="https://zahidhasan.com.bd&#10;https://zahidmama.zahidhasan.com.bd/"
               value={urls}
               onChange={(e) => setUrls(e.target.value)}
               rows={5}
