@@ -184,7 +184,7 @@ export default function More() {
               Extract Tags
             </Button>
             <Button onClick={handleNavigateHome} >
-              Extract H1 Tags
+              H1 Tags
             </Button>
           </div>
 
