@@ -49,7 +49,7 @@ export default function Home() {
 
   
   const handleNavigateHome = () => {
-    setLocation("/"); // ✅ Navigate to homepage without reloading
+    setLocation("/more"); // ✅ Navigate to homepage without reloading
   };
   
 
