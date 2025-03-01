@@ -178,7 +178,7 @@ export default function More() {
               {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               Extract Tags
             </Button>
-            <Button onClick={handleClick} className="mr-2 h-4 w-4 animate-spin"
+            <Button onClick={handleClick} className="mr-2 h-4 w-4 animate-spin">
               Extract H1 Tags
             </Button>
           </div>
