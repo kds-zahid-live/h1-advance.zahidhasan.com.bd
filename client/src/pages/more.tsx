@@ -133,16 +133,16 @@ export default function More() {
       <Card>
         <CardHeader>
           <CardTitle className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Multiple Heading Tags Extractor
+            Tags Extractor - H1 H2 H3
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="space-y-2">
             <label className="text-sm font-medium">
-              Enter URLs (one per line)
+              Enter URLs
             </label>
             <Textarea
-              placeholder="https://example.com&#10;https://another-example.com"
+              placeholder="https://zahidhasan.com.bd&#10;https://zahidmama.zahidhasan.com.bd/"
               value={urls}
               onChange={(e) => setUrls(e.target.value)}
               rows={5}
