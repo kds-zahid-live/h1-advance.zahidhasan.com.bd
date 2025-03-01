@@ -39,6 +39,13 @@ export default function More() {
     },
   });
 
+
+  const handleClick = () => {
+    window.location.href = 'https://tools.zahidhasan.com.bd/';
+  };
+
+  
+
   const handleSubmit = () => {
     const urlList = urls
       .split("\n")
@@ -162,6 +169,9 @@ export default function More() {
             <Button onClick={handleSubmit} disabled={isPending}>
               {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               Extract Tags
+            </Button>
+            <Button onClick={handleClick} className="mr-2 h-4 w-4 animate-spin"
+              Extract H1 Tags
             </Button>
           </div>
 
