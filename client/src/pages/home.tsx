@@ -128,7 +128,7 @@ export default function Home() {
       <Card>
         <CardHeader>
           <CardTitle className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            URL H1 Tag Extractor
+            Tag Extractor
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
