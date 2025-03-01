@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { useNavigate } from 'react-router-dom';
+
+import { useLocation } from "wouter"; // ✅ Import useLocation from wouter
+
 import { 
   Table, 
   TableBody, 
@@ -23,6 +25,10 @@ export default function More() {
   const [results, setResults] = useState<MoreTagResult[]>([]);
   const { toast } = useToast();
 
+  
+  const [, setLocation] = useLocation(); // ✅ Get setLocation for navigation
+  
+
   const { mutate, isPending } = useMutation({
     mutationFn: async (urls: string[]) => {
       const res = await apiRequest("POST", "/api/extract-more", { urls });
@@ -43,13 +49,12 @@ export default function More() {
   
 
 
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate('/'); // Navigates to the homepage without reloading
-  };
 
 
+
+    const handleNavigateHome = () => {
+      setLocation("/"); // ✅ Navigate to homepage without reloading
+    };
   
 
   
@@ -178,7 +183,7 @@ export default function More() {
               {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               Extract Tags
             </Button>
-            <Button onClick={handleClick} className="mr-2 h-4 w-4 animate-spin">
+            <Button onClick={handleNavigateHome} className="mr-2 h-4 w-4 animate-spin">
               Extract H1 Tags
             </Button>
           </div>
