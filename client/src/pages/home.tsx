@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+
+import { useLocation } from "wouter"; // ✅ Import useLocation from wouter
+
+
 import { 
   Table, 
   TableBody, 
@@ -22,6 +26,9 @@ export default function Home() {
   const [results, setResults] = useState<UrlResult[]>([]);
   const { toast } = useToast();
 
+  const [, setLocation] = useLocation(); // ✅ Get setLocation for navigation
+  
+
   const { mutate, isPending } = useMutation({
     mutationFn: async (urls: string[]) => {
       const res = await apiRequest("POST", "/api/extract-h1", { urls });
@@ -39,6 +46,14 @@ export default function Home() {
     },
   });
 
+
+  
+  const handleNavigateHome = () => {
+    setLocation("/"); // ✅ Navigate to homepage without reloading
+  };
+  
+
+  
   const handleSubmit = () => {
     const urlList = urls
       .split("\n")
@@ -157,6 +172,9 @@ export default function Home() {
             <Button onClick={handleSubmit} disabled={isPending}>
               {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               Extract H1 Tags
+            </Button>
+            <Button onClick={handleNavigateHome} >
+              More Tags
             </Button>
           </div>
 
